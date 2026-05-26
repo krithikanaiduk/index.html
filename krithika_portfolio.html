@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krithika Krishna Murthy — Marketing Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FFFCF8;
+    --ink: #1A1614;
+    --muted: #6B6460;
+    --accent: #C4622D;
+    --accent-light: #F0E4DA;
+    --accent-pale: #FBF4EF;
+    --border: rgba(26,22,20,0.12);
+    --border-strong: rgba(26,22,20,0.22);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    cursor: default;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 5%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 120px 5% 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 460px;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 12px 28px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    padding: 12px 28px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--border-strong);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+  }
+
+  .hero-stat-card {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border);
+    padding: 1.4rem 1.6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-stat-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+  }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+
+  .stat-label {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .hero-stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* SECTION LAYOUT */
+  section {
+    padding: 100px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .section-num {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-text {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-highlight {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .info-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding-bottom: 0.8rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .info-list li:last-child { border-bottom: none; }
+
+  .info-key {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .info-val { font-weight: 500; color: var(--ink); }
+
+  /* SKILLS */
+  .skills-bg {
+    background: var(--ink);
+    max-width: 100%;
+    padding: 100px 5%;
+  }
+
+  .skills-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .skills-bg .section-header {
+    border-bottom-color: rgba(255,255,255,0.12);
+  }
+
+  .skills-bg h2 { color: var(--cream); }
+  .skills-bg .section-num { color: #C4622D; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .skill-group {
+    background: rgba(255,255,255,0.04);
+    padding: 2rem;
+    border: 0.5px solid rgba(255,255,255,0.08);
+    transition: background 0.2s;
+  }
+
+  .skill-group:hover { background: rgba(196,98,45,0.12); }
+
+  .skill-group-title {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    font-size: 13px;
+    color: rgba(250,247,242,0.75);
+    background: rgba(255,255,255,0.07);
+    padding: 5px 12px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  /* EXPERIENCE */
+  .exp-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
+    border-bottom: 0.5px solid var(--border);
+    position: relative;
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-meta {
+    padding-top: 4px;
+  }
+
+  .exp-date {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .exp-company {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .exp-role {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.2px;
+  }
+
+  .exp-location {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .exp-bullets li {
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.7;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 12px;
+  }
+
+  .highlight-pill {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  /* PROJECT */
+  .project-card {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border);
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .project-tag {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.2px;
+  }
+
+  .project-desc {
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 560px;
+  }
+
+  .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+
+  .tool-badge {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink);
+    border: 0.5px solid var(--border-strong);
+    padding: 4px 10px;
+  }
+
+  .project-arrow {
+    font-size: 2rem;
+    color: var(--border-strong);
+    transition: color 0.2s;
+    font-style: normal;
+    line-height: 1;
+  }
+
+  .project-card:hover .project-arrow { color: var(--accent); }
+
+  /* EDUCATION */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .edu-card {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border);
+    padding: 2rem 2.2rem;
+    transition: border-color 0.2s;
+  }
+
+  .edu-card:hover { border-color: var(--accent); }
+
+  .edu-school {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-degree {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+  }
+
+  .edu-detail {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* CERTS */
+  .cert-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 3rem;
+  }
+
+  .cert-chip {
+    background: var(--accent-pale);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border: 0.5px solid rgba(196,98,45,0.25);
+  }
+
+  /* CONTACT */
+  .contact-bg {
+    background: var(--accent);
+    max-width: 100%;
+    padding: 100px 5%;
+  }
+
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .contact-bg h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--warm-white);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+
+  .contact-bg h2 em { font-style: italic; color: rgba(255,255,255,0.6); }
+
+  .contact-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--warm-white);
+    text-decoration: none;
+    padding: 1rem 1.4rem;
+    border: 0.5px solid rgba(255,255,255,0.25);
+    transition: background 0.2s;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .contact-link:hover { background: rgba(255,255,255,0.15); }
+
+  .contact-link-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .contact-link span { opacity: 0.85; }
+
+  /* RECOMMENDATIONS */
+  .rec-card {
+    background: rgba(255,255,255,0.04);
+    border: 0.5px solid rgba(255,255,255,0.08);
+    padding: 1.8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: background 0.2s;
+  }
+
+  .rec-card:hover { background: rgba(196,98,45,0.1); }
+
+  .rec-initials {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .rec-quote {
+    font-size: 14px;
+    color: rgba(250,247,242,0.7);
+    line-height: 1.75;
+    font-style: italic;
+  }
+
+  .rec-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-top: 0.8rem;
+  }
+
+  .rec-title {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: rgba(250,247,242,0.4);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 2rem 5%;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(250,247,242,0.35);
+    letter-spacing: 0.06em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.22s; }
+  .delay-3 { animation-delay: 0.36s; }
+  .delay-4 { animation-delay: 0.5s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 100px; }
+    .hero-visual { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .project-card { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    nav .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">KK</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#recommendations">Recommendations</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1200px;margin:0 auto;">
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow fade-up">Available for full-time roles · 2027</p>
+      <h1 class="fade-up delay-1">
+        Marketing<br>
+        <em>Analyst</em> &amp;<br>
+        Growth Strategist
+      </h1>
+      <p class="hero-sub fade-up delay-2">
+        I turn messy data into clear decisions. Analytics graduate student at Northeastern with 5+ years driving growth across digital campaigns, dashboards, and cross-functional teams.
+      </p>
+      <div class="hero-cta fade-up delay-3">
+        <a href="#experience" class="btn-primary">View My Work</a>
+        <a href="mailto:krishnamurthy.kr@northeastern.edu" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-up delay-4">
+      <div class="hero-stat-card">
+        <div class="stat-num">60K</div>
+        <div class="stat-label">Instagram followers scaled in 3 months</div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat-card">
+          <div class="stat-num">92%</div>
+          <div class="stat-label">Reporting turnaround reduction</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-num">2×</div>
+          <div class="stat-label">Viewership growth via data-driven content</div>
+        </div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Client accounts managed simultaneously</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2>About Me</h2>
+  </div>
+  <div class="about-grid">
+    <ul class="info-list">
+      <li><span class="info-key">Location</span><span class="info-val">Boston, MA</span></li>
+      <li><span class="info-key">Program</span><span class="info-val">MPS Analytics, Northeastern</span></li>
+      <li><span class="info-key">Co-op</span><span class="info-val">Vaultspeed Boston</span></li>
+      <li><span class="info-key">Graduation</span><span class="info-val">Expected May 2027</span></li>
+      <li><span class="info-key">Focus</span><span class="info-val">Marketing Analytics</span></li>
+      <li><span class="info-key">Background</span><span class="info-val">Electronics Eng. → Marketing</span></li>
+    </ul>
+    <div>
+      <p class="about-label">Background</p>
+      <p class="about-text">
+        I'm an analytics-driven marketer who bridges the gap between raw data and real business outcomes. With a foundation in <span class="about-highlight">engineering and 5+ years of marketing experience</span> across India's fast-paced startup scene, I've built dashboards, managed 15+ client accounts, and scaled brands from zero to tens of thousands of followers.
+      </p>
+      <p class="about-text">
+        Currently completing my <span class="about-highlight">Master of Professional Studies in Analytics at Northeastern University</span> while co-oping at Vaultspeed Boston in digital marketing and website operations. My work focuses on data-driven campaign optimization, KPI tracking, and cross-functional communication.
+      </p>
+      <p class="about-text">
+        I aspire to grow into a <span class="about-highlight">Marketing Analyst role</span> where I can combine quantitative thinking with creative strategy — using tools like Tableau, SQL, and Excel to help teams make faster, smarter decisions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<div class="skills-bg">
+  <div class="skills-inner">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Skills & Tools</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <p class="skill-group-title">Analytics & Data</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Excel (Advanced)</span>
+          <span class="skill-tag">Pivot Tables</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Data Validation</span>
+          <span class="skill-tag">Statistical Analysis</span>
+          <span class="skill-tag">R Programming</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-title">Marketing & Strategy</p>
+        <div class="skill-tags">
+          <span class="skill-tag">KPI Tracking</span>
+          <span class="skill-tag">Campaign Analytics</span>
+          <span class="skill-tag">Market Research</span>
+          <span class="skill-tag">Digital Marketing</span>
+          <span class="skill-tag">Content Strategy</span>
+          <span class="skill-tag">Audience Segmentation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-title">Reporting & Operations</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Dashboard Reporting</span>
+          <span class="skill-tag">PowerPoint</span>
+          <span class="skill-tag">SharePoint</span>
+          <span class="skill-tag">Project Reporting</span>
+          <span class="skill-tag">Risk Tracking</span>
+          <span class="skill-tag">Cross-functional Comms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2>Experience</h2>
+  </div>
+
+  <div class="exp-timeline">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-date">2025 — Present</p>
+        <p class="exp-company">Vaultspeed · Boston, MA</p>
+      </div>
+      <div>
+        <span class="highlight-pill">Current Co-op</span>
+        <h3 class="exp-role">Digital Marketing & Website Operations Co-op</h3>
+        <p class="exp-location">Focus: Data-Driven Marketing · Boston, USA</p>
+        <ul class="exp-bullets">
+          <li>Leading data-driven marketing initiatives with a focus on website performance and campaign analytics.</li>
+          <li>Supporting digital operations strategy with measurable KPIs and structured reporting.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-date">Mar 2025 — Present</p>
+        <p class="exp-company">Northeastern University · Boston</p>
+      </div>
+      <div>
+        <h3 class="exp-role">Communication Coordinator (Part-Time)</h3>
+        <ul class="exp-bullets">
+          <li>Drafts and optimizes internal and external email communications to improve engagement and clarity.</li>
+          <li>Tracks campaign metrics and recommends content improvements using data insights.</li>
+          <li>Supports cross-team communication initiatives and maintains accuracy of digital content.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-date">Aug 2024 — Aug 2025</p>
+        <p class="exp-company">Epsilon, CJ Affiliate · Bangalore</p>
+      </div>
+      <div>
+        <h3 class="exp-role">Senior Client Service Analyst</h3>
+        <ul class="exp-bullets">
+          <li>Analyzed client performance data, competitor benchmarks, and publisher activity to identify trends and growth opportunities.</li>
+          <li>Built structured reports and dashboards supporting data visualization and quarterly business reviews.</li>
+          <li>Consolidated regional reports into a unified framework, <strong style="color:var(--ink)">reducing turnaround time by 92%</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-date">Apr 2023 — Jul 2024</p>
+        <p class="exp-company">iNeuron.ai · Bangalore</p>
+      </div>
+      <div>
+        <h3 class="exp-role">Associate Manager, Social Media Strategy</h3>
+        <ul class="exp-bullets">
+          <li>Led data-driven social media campaigns, <strong style="color:var(--ink)">scaling Instagram from 0 to 60K followers in three months</strong>.</li>
+          <li>Analyzed audience behavior and content performance to improve reach and engagement.</li>
+          <li>Recognized as Best Employee of the Month for measurable performance impact.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-date">Feb 2022 — Apr 2023</p>
+        <p class="exp-company">Akarmaxs Tech · Bangalore</p>
+      </div>
+      <div>
+        <h3 class="exp-role">Marketing and Communication Executive</h3>
+        <ul class="exp-bullets">
+          <li>Managed analytics-driven marketing initiatives across 15+ client accounts.</li>
+          <li>Interpreted performance metrics to refine messaging, improve engagement, and support client objectives.</li>
+          <li>Achieved a <strong style="color:var(--ink)">2× increase in viewership</strong> through data-informed content optimization.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-date">Jul 2019 — Jan 2022</p>
+        <p class="exp-company">Dotball Interactive · Bangalore</p>
+      </div>
+      <div>
+        <h3 class="exp-role">Marketing & Operations Executive</h3>
+        <ul class="exp-bullets">
+          <li>Used campaign performance data to optimize content strategy and audience targeting.</li>
+          <li>Tracked timelines, deliverables, and KPIs to ensure operational efficiency.</li>
+          <li>Collaborated with leadership to improve campaign effectiveness by approximately <strong style="color:var(--ink)">40%</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background: var(--warm-white); max-width: 100%; padding: 100px 5%;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Projects</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px;">
+
+      <div class="project-card">
+        <div>
+          <p class="project-tag">Data Analysis · Tableau</p>
+          <h3 class="project-title">Engagement Analytics Dashboard</h3>
+          <p class="project-desc">
+            Conducted exploratory data analysis on engagement datasets, tested hypotheses using statistical methods, and built Tableau dashboards to visualize trends. Documented data limitations and delivered actionable insight reports to stakeholders.
+          </p>
+          <div class="project-tools">
+            <span class="tool-badge">Tableau</span>
+            <span class="tool-badge">Statistical Analysis</span>
+            <span class="tool-badge">EDA</span>
+            <span class="tool-badge">Hypothesis Testing</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <p class="project-tag">Marketing Operations · Reporting</p>
+          <h3 class="project-title">Regional Reporting Consolidation — CJ Affiliate</h3>
+          <p class="project-desc">
+            Redesigned a fragmented multi-region reporting process into a unified framework. Reduced report turnaround time by 92% while improving consistency for quarterly business reviews across client accounts.
+          </p>
+          <div class="project-tools">
+            <span class="tool-badge">Excel</span>
+            <span class="tool-badge">Dashboard Design</span>
+            <span class="tool-badge">Process Optimization</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <p class="project-tag">Growth Marketing · Social Media</p>
+          <h3 class="project-title">0→60K Instagram Growth Campaign</h3>
+          <p class="project-desc">
+            Designed and executed a data-driven Instagram growth strategy at iNeuron.ai. Leveraged audience behavior analysis, A/B content testing, and performance tracking to scale the brand from zero to 60,000 followers in 90 days.
+          </p>
+          <div class="project-tools">
+            <span class="tool-badge">Campaign Analytics</span>
+            <span class="tool-badge">A/B Testing</span>
+            <span class="tool-badge">Content Strategy</span>
+            <span class="tool-badge">KPI Tracking</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section>
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2>Education</h2>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <p class="edu-detail">Expected May 2027</p>
+      <h3 class="edu-school">Northeastern University</h3>
+      <p class="edu-degree">Master of Professional Studies in Analytics</p>
+      <p style="font-size:13px;color:var(--muted);line-height:1.7;">Data Management & SQL · Business Intelligence · Data Visualization · Statistical Analysis · Probability & Inference</p>
+    </div>
+    <div class="edu-card">
+      <p class="edu-detail">July 2019 · GPA 3.0</p>
+      <h3 class="edu-school">Visvesvaraya Technological University</h3>
+      <p class="edu-degree">Bachelor of Engineering — Electronics & Communication</p>
+      <p style="font-size:13px;color:var(--muted);">Belgaum, India</p>
+    </div>
+  </div>
+
+  <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-top:3rem;margin-bottom:1rem;">Certifications</p>
+  <div class="cert-row">
+    <span class="cert-chip">Digital Marketing</span>
+    <span class="cert-chip">Advanced Excel</span>
+    <span class="cert-chip">R Programming</span>
+    <span class="cert-chip">Analytical Thinking</span>
+  </div>
+</section>
+
+<!-- RECOMMENDATIONS -->
+<div style="background: var(--ink); padding: 100px 5%;" id="recommendations">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-header" style="border-bottom-color:rgba(255,255,255,0.12);">
+      <span class="section-num" style="color:var(--accent);">05</span>
+      <h2 style="color:var(--cream);">What People Say</h2>
+    </div>
+
+    <!-- Featured large quote -->
+    <div style="border-left:3px solid var(--accent);padding:2rem 2.5rem;margin-bottom:3rem;background:rgba(255,255,255,0.04);">
+      <p style="font-family:var(--serif);font-size:1.35rem;font-style:italic;color:var(--cream);line-height:1.7;margin-bottom:1.5rem;">"She strategized social media in the finest manner and curated content that took a trend every second day. Her engagement plans always worked, and our clients were happier than ever. Potential that seeds growth, Dedication that holds consistency, and a Mindset that shed positivity in every aspect."</p>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:var(--cream);flex-shrink:0;">VA</div>
+        <div>
+          <p style="font-size:13px;font-weight:500;color:var(--cream);">Vivek Anantpuri</p>
+          <p style="font-size:12px;color:rgba(250,247,242,0.5);">Content Manager, SoCheers · Senior colleague</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommendation grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;">
+
+      <div class="rec-card">
+        <div class="rec-initials" style="background:rgba(196,98,45,0.25);color:#F0A070;">DK</div>
+        <div>
+          <p class="rec-quote">"She consistently demonstrated strong ownership and accountability, ensuring the timely and seamless execution of operational deliverables. Her proactive mindset and thoughtful questions reflected a strong understanding of the accounts and business dynamics."</p>
+          <p class="rec-name">Deepthi K</p>
+          <p class="rec-title">Client Development Manager · CJ, Epsilon · Senior colleague</p>
+        </div>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-initials" style="background:rgba(52,120,190,0.2);color:#7AB8E8;">DC</div>
+        <div>
+          <p class="rec-quote">"She didn't just absorb the material — she worked with it, asked thoughtful questions, and found ways to connect concepts to real-world scenarios. Her work showed strong analytical thinking and a genuine interest in understanding the 'why' behind the numbers."</p>
+          <p class="rec-name">Diana Carolina Chiluiza, PhD</p>
+          <p class="rec-title">Analytics Professor · Northeastern University · Mentor</p>
+        </div>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-initials" style="background:rgba(80,160,80,0.2);color:#80CC80;">KM</div>
+        <div>
+          <p class="rec-quote">"Krithika did a great job conducting operational tasks and strategic client reporting in a timely and professional manner. She was very efficient at her tasks and was always willing to help out when needed."</p>
+          <p class="rec-name">Kevin McCahill</p>
+          <p class="rec-title">Director, Client Strategy · Senior colleague</p>
+        </div>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-initials" style="background:rgba(196,98,45,0.2);color:#F0A070;">GK</div>
+        <div>
+          <p class="rec-quote">"Krithika takes her work extremely seriously — she is always well-prepared, detail-oriented, and ready to step in and offer support whenever needed. Her positive attitude, strong work ethic, and collaborative approach made her a real asset to the team."</p>
+          <p class="rec-name">Gosia Konecka</p>
+          <p class="rec-title">Senior Planning Manager · OMD EMEA · Senior colleague</p>
+        </div>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-initials" style="background:rgba(160,80,160,0.2);color:#C080C0;">AS</div>
+        <div>
+          <p class="rec-quote">"She has an exceptional talent for digital marketing, with a deep understanding of strategies and a knack for creativity. It's always inspiring to see her blend analytical thinking with innovative ideas to achieve great results."</p>
+          <p class="rec-name">Aishwarya Sudarsan</p>
+          <p class="rec-title">Marketing & Growth · Ex-iNeuron · Teammate</p>
+        </div>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-initials" style="background:rgba(196,98,45,0.15);color:#F0A070;">SR</div>
+        <div>
+          <p class="rec-quote">"She is a skilled communicator, adept at crafting compelling messaging that drives results. Krithika has been instrumental in developing highly effective marketing campaigns that have increased our brand awareness and market penetration."</p>
+          <p class="rec-name">Sneha Rakesh</p>
+          <p class="rec-title">Entrepreneur · Direct manager</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-bg" id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2>Let's <em>build</em><br>something together.</h2>
+      <p class="contact-sub">Open to marketing analyst roles, data-driven marketing positions, and analytics co-ops starting 2027. Always happy to connect.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:krishnamurthy.kr@northeastern.edu" class="contact-link">
+        <div class="contact-link-icon">✉</div>
+        <span>krishnamurthy.kr@northeastern.edu</span>
+      </a>
+      <a href="https://linkedin.com/in/krithika-k28" target="_blank" class="contact-link">
+        <div class="contact-link-icon">in</div>
+        <span>linkedin.com/in/krithika-k28</span>
+      </a>
+      <a href="tel:+17323182534" class="contact-link">
+        <div class="contact-link-icon">☎</div>
+        <span>+1 (732) 318-2534</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Krithika Krishna Murthy · Boston, MA · Built for impact, driven by data</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.exp-item, .project-card, .edu-card, .skill-group, .rec-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
